@@ -1,39 +1,39 @@
 // task__1
 
 const sayHello = function (name) {
-    if (name == 'Mark') {
-        return console.log(`Hi, ${name}`);
+    if (name.toLowerCase() == 'mark'.toLowerCase()) {
+        return `Hi, ${name}`;
     } else {
-        return console.log(`Hello, ${name}`);
+        return `Hello, ${name}`;
     }
 };
 
 // const sayHello = name => {
-//     if (name == 'Mark') {
-//         return console.log(`Hi, ${name}`);
+//     if (name.toLowerCase() == 'mark'.toLowerCase()) {
+//         return `Hi, ${name}`;
 //     } else {
-//         return console.log(`Hello, ${name}`);
+//         return `Hello, ${name}`;
 //     }
 // };
 
-sayHello('Mark');
-sayHello('Oleg');
-sayHello('Viktor');
+console.log(sayHello('Mark'));
+console.log(sayHello('Oleg'));
+console.log(sayHello('Viktor'));
 
 
 
 
 // task__2 
 
-const result = function(n, m) {
+const hypotenuse = function(n, m) {
     return Math.sqrt((n * n) + (m * m));
 };
 
-// const result = (n, m) => {
+// const hypotenuse = (n, m) => {
 //     return Math.sqrt((n * n) + (m * m));
 // }
 
-console.log(result(3, 4));
+console.log(hypotenuse(3, 4));
 
 
 
@@ -41,20 +41,12 @@ console.log(result(3, 4));
 
 // task__3
 
-let min = function(a, b) {
-    if (a < b) {
-        return a;
-    } else {
-        return b;
-    }
-};
+const min = function(a, b) {
+    return Math.min (a, b);
+}
 
-// let min = (a, b) => {
-//     if (a < b) {
-//         return a;
-//     } else {
-//         return b;
-//     }
+// const min = (a, b) => {
+//     return Math.min (a, b);
 // };
 
 console.log(min(5, 2));
@@ -70,7 +62,7 @@ console.log(min(1, 1));
 // task__4 
 
 const isEven = function(number) {
-    if (number % 2 == 0) {
+    if (number % 2 === 0) {
         return true;
     } else {
         return false;
@@ -78,7 +70,7 @@ const isEven = function(number) {
 };
 
 // const isEven = (number) => {
-//     if (number % 2 == 0) {
+//     if (number % 2 === 0) {
 //         return true;
 //     } else {
 //         return false;
@@ -96,17 +88,17 @@ console.log(isEven(6));
 
 //  task__5 
 
-const deleteCharsResult = function(deleteChar) {
-    return deleteChar.substring(1, deleteChar.length - 1);
+const deleteChars = function(str) {
+    return str.slice(1, -1);
 };
 
-// const deleteCharsResult = (deleteChar) => {
-//     return deleteChar.substring(1, deleteChar.length - 1);
+// const deleteChars = (str) => {
+//     return str.slice(1, -1);
 // }
 
 
-console.log(deleteCharsResult('Hello'));
-console.log(deleteCharsResult('A'));
+console.log(deleteChars('Hello'));
+console.log(deleteChars('A'));
 
 
 
@@ -115,18 +107,18 @@ console.log(deleteCharsResult('A'));
 
 // task__6
 
-function someFn(string) {
-    string = string.toLowerCase();
-    return string[0].toUpperCase() + string.slice(1);
-}
+function someFn(someFnLower) {
+    someFnUpper = someFnLower.toLowerCase();
+    return someFnUpper[0].toUpperCase() + someFnUpper.slice(1);
+};
 
-// someFn = (string) => {
-//     string = string.toLowerCase();
-//     return string[0].toUpperCase() + string.slice(1);
+// someFn = (someFnLower) => {
+//     someFnUpper = someFnLower.toLowerCase();
+//     return someFnUpper[0].toUpperCase() + someFnUpper.slice(1);
 // };
 
 console.log(someFn('пиТеР'));
-console.log(someFn('javaScript'))
+console.log(someFn('javaScript'));
 
 
 
@@ -136,16 +128,14 @@ console.log(someFn('javaScript'))
 
 // task__9
 
-function stringCutter(string, amount, symbol) {
-    if (amount && symbol) return string;
-    symbol = symbol || '...';
-    return string.substr(0, amount) + symbol;
+function stringCutter(anyString, symbol) {
+    symbol = '...';
+    return anyString.substr(0, 6) + symbol;
 };
 
-// stringCutter = (string, amount, symbol) => {
-//     if (amount && symbol) return string;
-//     symbol = symbol || '...';
-//     return string.substr(0, amount) + symbol;
+// stringCutter = (anyString, symbol) => {
+//     symbol = '...';
+//     return anyString.substr(0, 6) + symbol;
 // };
 
 console.log(stringCutter('Привет Мир!', 6));
